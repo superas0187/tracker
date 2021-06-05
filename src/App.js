@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
 
-import Details from './components/Details/Styles'; 
+import Details from './components/Details/styles'; 
 
 import useStyles from './styles';
 
