@@ -23,7 +23,7 @@ const List = () => {
                                 <MoneyOff />
                             </Avatar>
                         </ListItemAvatar>
-                        <ListItemText primary={transitions.category} secondary={`$${transition.amount} - ${transition.data}`} />
+                        <ListItemText primary={transition.category} secondary={`$${transition.amount} - ${transition.data}`} />
                         <ListItemSecondaryAction>
                             <IconButton edge="end" aria-label="delete" onClick="">
                                 <Delete />
