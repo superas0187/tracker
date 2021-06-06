@@ -1,9 +1,9 @@
 import React from 'react';
 import { List as MUIList, ListItem, ListItemAvatar, Avatar, ListItemSecondaryAction, IconButton, Slide, ListItemText } from '@material-ui/core';
-import{ Delete, MonevOff } from '@material-ui/icons';
+import{ Delete, MoneyOff } from '@material-ui/icons';
 
 import useStyles from './styles';
-import transitions from '@material-ui/core/styles/transitions';
+
 
 
 const List = () => {
@@ -20,7 +20,7 @@ const List = () => {
                     <ListItem>
                         <ListItemAvatar>
                             <Avatar className={transaction.type === 'Income' ? classes.avatarIncome : classes.avatarExpense}>
-                                <MonevOff />
+                                <MoneyOff />
                             </Avatar>
                         </ListItemAvatar>
                         <ListItemText primary={transitions.category} secondary={`$${transition.amount} - ${transition.data}`} />
