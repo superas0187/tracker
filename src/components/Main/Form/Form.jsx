@@ -40,5 +40,7 @@ const Form = () => {
             </Grid>
             <Button className={classes.button} variavt="outlined" color="primary" fullWidth>Create</Button>
         </Grid>
-    )
+    );
 }
+
+export default Form
