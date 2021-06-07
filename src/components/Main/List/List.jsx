@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { List as MUIList, ListItem, ListItemAvatar, Avatar, ListItemSecondaryAction, IconButton, Slide, ListItemText } from '@material-ui/core';
 import{ Delete, MoneyOff } from '@material-ui/icons';
 
-import { ExpenseTrackerContext } from '../../context/context';
+import { ExpenseTrackerContext } from '../../../context/context';
 
 
 
