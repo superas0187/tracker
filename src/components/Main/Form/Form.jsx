@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-
-import { TextEield, Typography, Grid, Button, FormControl, InputLabel, Select, MenuItem, TextField } from '@material-ui/core';
-
+import React, { useState, useContext } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { TextField, Typography, Grid, Button, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
+import { ExpenseTrackerContext } from '../../../context/context';
 import useStyles from './styles';
+import transitions from '@material-ui/core/styles/transitions';
 
 
 const initialState = {
@@ -15,8 +16,15 @@ const initialState = {
 const Form = () => {
     const classes = useStyles();
     const [ formData, setFormData] = useState(initialState);
+    const { addTransaction } = useContext (ExpenseTrackerContext);
+    
+    const createTransaction = () => {
+        const transaction = { ...formData, amount: Number(formData.amount), id: uuidv4() }
 
-    console.log(formData);
+        addTransaction(transition);
+        setFormData(initialState);
+    }
+
 
     return (
         <Grid container spacing={2}>
@@ -49,7 +57,7 @@ const Form = () => {
             <Grid item xs={6}>
                 <TextField type="data" label="Data" fullWidth value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })}/> 
             </Grid>
-            <Button className={classes.button} variavt="outlined" color="primary" fullWidth>Create</Button>
+            <Button className={classes.button} variavt="outlined" color="primary" fullWidth onClick={createTransaction}>Create</Button>
         </Grid>
     );
 }
