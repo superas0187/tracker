@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { TextEield, Typography, Grid, Button, FormControl, InputLabel, Select, MenuItem, TextField } from '@material-ui/core';
 
 import useStyles from './styles';
-import { FormatBoldTwoTone } from '@material-ui/icons';
+
 
 const initialState = {
     amount: '',
@@ -14,7 +14,7 @@ const initialState = {
 
 const Form = () => {
     const classes = useStyles();
-    const [ formData, setformData] = useState(initialState);
+    const [ formData, setFormData] = useState(initialState);
 
     console.log(formData);
 
