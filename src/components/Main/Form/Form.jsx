@@ -28,7 +28,7 @@ const Form = () => {
             <Grid item xs={6}>
                 <FormControl fullWidth>
                     <InputLabel>Type</InputLabel>
-                    <Select value={FormatBoldTwoTone.type} onChange={(e) => setformData({ ...formData, type: e.target.value})}>
+                    <Select value={FormatBoldTwoTone.type} onChange={(e) => setFormData({ ...formData, type: e.target.value})}>
                         <MenuItem value="Income">Income</MenuItem>
                         <MenuItem value="Expense">Expense</MenuItem>
                     </Select>
@@ -37,17 +37,17 @@ const Form = () => {
             <Grid item xs={6}>
                 <FormControl fullWidth>
                     <InputLabel>Category</InputLabel>
-                    <Select value={formData.category} onChange={(e) => setformData({ ...formData, category: e.target.value})}>
+                    <Select value={formData.category} onChange={(e) => setFormData({ ...formData, category: e.target.value})}>
                         <MenuItem value="business">Business</MenuItem>
                         <MenuItem value="salary">Salary</MenuItem> 
                     </Select>
                 </FormControl>
             </Grid>
             <Grid item xs={6}>
-                <TextField type="number" label="Amount" fullWidth value={formData.amount} onChange={(e) => setformData({ ...formData, amount: e.target.value })} /> 
+                <TextField type="number" label="Amount" fullWidth value={formData.amount} onChange={(e) => setFormData({ ...formData, amount: e.target.value })} /> 
             </Grid>
             <Grid item xs={6}>
-                <TextField type="data" label="Data" fullWidth value={formData.date} onChange={(e) => setformData({ ...formData, date: e.target.value })}/> 
+                <TextField type="data" label="Data" fullWidth value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })}/> 
             </Grid>
             <Button className={classes.button} variavt="outlined" color="primary" fullWidth>Create</Button>
         </Grid>
