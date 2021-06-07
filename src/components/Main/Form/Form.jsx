@@ -3,7 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 import { TextField, Typography, Grid, Button, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
 import { ExpenseTrackerContext } from '../../../context/context';
 import useStyles from './styles';
-import transitions from '@material-ui/core/styles/transitions';
+
+import { incomeCategories, expenseCategories} from '../../../contants/categories';
 
 
 const initialState = {
@@ -21,9 +22,11 @@ const Form = () => {
     const createTransaction = () => {
         const transaction = { ...formData, amount: Number(formData.amount), id: uuidv4() }
 
-        addTransaction(transition);
+        addTransaction(transaction);
         setFormData(initialState);
     }
+
+    const selectedCategories = formData.type === 'Income' ? incomeCategories : expenseCategories;
 
 
     return (
@@ -46,8 +49,7 @@ const Form = () => {
                 <FormControl fullWidth>
                     <InputLabel>Category</InputLabel>
                     <Select value={formData.category} onChange={(e) => setFormData({ ...formData, category: e.target.value})}>
-                        <MenuItem value="business">Business</MenuItem>
-                        <MenuItem value="salary">Salary</MenuItem> 
+                        {selectedCategories.map((c) => <MenuItem key={c.type} value={c.type}>{c.type}</MenuItem>)}
                     </Select>
                 </FormControl>
             </Grid>
