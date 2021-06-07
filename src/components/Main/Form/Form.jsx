@@ -28,7 +28,7 @@ const Form = () => {
             <Grid item xs={6}>
                 <FormControl fullWidth>
                     <InputLabel>Type</InputLabel>
-                    <Select value={FormatBoldTwoTone.type} onChange={(e) => setFormData({ ...formData, type: e.target.value})}>
+                    <Select value={formData.type} onChange={(e) => setFormData({ ...formData, type: e.target.value})}>
                         <MenuItem value="Income">Income</MenuItem>
                         <MenuItem value="Expense">Expense</MenuItem>
                     </Select>
