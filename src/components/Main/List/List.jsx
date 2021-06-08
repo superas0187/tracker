@@ -7,7 +7,7 @@ import { ExpenseTrackerContext } from '../../../context/context';
 
 
 import useStyles from './styles';
-import transitions from '@material-ui/core/styles/transitions';
+import transactions from '@material-ui/core/styles/transactions';
 
 
 
