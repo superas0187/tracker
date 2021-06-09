@@ -37,7 +37,7 @@ const Form = () => {
                 setFormData({ ...formData, type: 'Income' });
             } else if(segment.isFinal && segment.intent.intent === "create_transaction") {
                 return createTransaction();
-            } else if(segment.isFinal && segment.intent.intent === "cencel_transaction") {
+            } else if(segment.isFinal && segment.intent.intent === "cancel_transaction") {
                 return setFormData(initialState);
             }
 
@@ -54,8 +54,8 @@ const Form = () => {
                             setFormData({ ...formData, type: 'Expense', category });
                         }
                         break;
-                    case 'data':
-                        setFormData({ ...formData, data: e.value});
+                    case 'date':
+                        setFormData({ ...formData, date: e.value});
                         break;
                     default:
                         break;
@@ -99,7 +99,7 @@ const Form = () => {
                 <TextField type="number" label="Amount" fullWidth value={formData.amount} onChange={(e) => setFormData({ ...formData, amount: e.target.value })} /> 
             </Grid>
             <Grid item xs={6}>
-                <TextField type="data" label="Data" fullWidth value={formData.date} onChange={(e) => setFormData({ ...formData, date: formatDate( e.target.value) })}/> 
+                <TextField type="date" label="Date" fullWidth value={formData.date} onChange={(e) => setFormData({ ...formData, date: formatDate( e.target.value) })}/> 
             </Grid>
             <Button className={classes.button} variavt="outlined" color="primary" fullWidth onClick={createTransaction}>Create</Button>
         </Grid>
