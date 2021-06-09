@@ -31,3 +31,5 @@ const CustomizedSnackbar = ({ open, setOpen}) => {
         </div>
     )
 }
+
+export default CustomizedSnackbar

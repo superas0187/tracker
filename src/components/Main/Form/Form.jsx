@@ -7,7 +7,7 @@ import formatDate from '../../../utils/formatDate';
 import { useSpeechContext } from '@speechly/react-client';
 
 import { incomeCategories, expenseCategories} from '../../../constants/categories';
-
+import CustomizedSnackbar from '../../Snackbar/Snackbar';
 
 const initialState = {
     amount: '',
