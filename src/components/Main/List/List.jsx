@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { List as MUIList, ListItem, ListItemAvatar, Avatar, ListItemSecondaryAction, IconButton, Slide, ListItemText } from '@material-ui/core';
+import { List as MUIList, ListItem, ListItemAvatar, Avatar, ListItemSecondaryAction, IconButton, Slide, ListItemText, Card } from '@material-ui/core';
 import{ Delete, MoneyOff } from '@material-ui/icons';
 
 import { ExpenseTrackerContext } from '../../../context/context';
@@ -17,6 +17,7 @@ const List = () => {
 
     
     return (
+        <Card style={{boxShadow: ' 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
         <MUIList dense={false} className={classes.list}>
             {transactions.map((transaction) => (
                 <Slide  direction="down" in mountOnEnter unmountOnExit key={transaction.id}>
@@ -36,6 +37,7 @@ const List = () => {
                 </Slide>
             ))}
         </MUIList>
+        </Card>
     )
 }
 

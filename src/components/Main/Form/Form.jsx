@@ -75,7 +75,7 @@ const Form = () => {
 
 
     return (
-        <Grid container spacing={2}>
+        <Grid container spacing={2} style={{boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
             <CustomizedSnackbar open={open} setOpen={setOpen} />
             <Grid item xs={12}>
                 <Typography align="center" variant="subtitle2" gutterBottom>
@@ -103,7 +103,7 @@ const Form = () => {
                 <TextField type="number" label="Amount" fullWidth value={formData.amount} onChange={(e) => setFormData({ ...formData, amount: e.target.value })} /> 
             </Grid>
             <Grid item xs={6}>
-                <TextField type="date" label="Date" fullWidth value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })}/> 
+                <TextField type="date"  fullWidth value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })}/> 
             </Grid>
             <Button className={classes.button} variavt="outlined" color="primary" fullWidth onClick={createTransaction}>Create</Button>
         </Grid>
